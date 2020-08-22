@@ -18,6 +18,7 @@ namespace F12020Telemetry
         public delegate void SessionDataReceiveDelegate(PacketSessionData packet);
         public delegate void LapDataReceiveDelegate(PacketLapData packet);
         public delegate void EventDataReceiveDelegate(PacketEventData packet);
+        public delegate void ParticipantsDataReceiveDelegate(PacketParticipantsData packet);
         public delegate void CarTelemetryReceiveDelegate(PacketCarTelemetryData packet);
 
         // Packet events
@@ -25,6 +26,7 @@ namespace F12020Telemetry
         public event SessionDataReceiveDelegate OnSessionDataReceive;
         public event LapDataReceiveDelegate OnLapDataReceive;
         public event EventDataReceiveDelegate OnEventDataReceive;
+        public event ParticipantsDataReceiveDelegate OnParticipantsDataReceive;
         public event CarTelemetryReceiveDelegate OnCarTelemetryReceive;
 
         public bool Connected { get; private set; }
@@ -72,6 +74,8 @@ namespace F12020Telemetry
                         OnEventDataReceive?.Invoke(eventData);
                         break;
                     case PacketID.PARTICIPANTS:
+                        PacketParticipantsData participantsData = (PacketParticipantsData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(PacketParticipantsData));
+                        OnParticipantsDataReceive?.Invoke(participantsData);
                         break;
                     case PacketID.CAR_SETUPS:
                         break;
