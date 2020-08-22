@@ -22,6 +22,7 @@ namespace F12020Telemetry
         public delegate void CarSetupsDataReceiveDelegate(PacketCarSetupData packet);
         public delegate void CarTelemetryDataReceiveDelegate(PacketCarTelemetryData packet);
         public delegate void CarStatusDataReceiveDelegate(PacketCarStatusData packet);
+        public delegate void FinalClassificationDataReceiveDelegate(FinalClassificationData packet);
 
         // Packet events
         public event MotionDataReceiveDelegate OnMotionDataReceive;
@@ -32,6 +33,7 @@ namespace F12020Telemetry
         public event CarSetupsDataReceiveDelegate OnCarSetupsDataReceive;
         public event CarTelemetryDataReceiveDelegate OncarTelemetryDataReceive;
         public event CarStatusDataReceiveDelegate OnCarStatusDataReceive;
+        public event FinalClassificationDataReceiveDelegate OnFinalClassificationDataReceive;
 
         public bool Connected { get; private set; }
 
@@ -94,6 +96,8 @@ namespace F12020Telemetry
                         OnCarStatusDataReceive?.Invoke(carStatusData);
                         break;
                     case PacketID.FINAL_CLASSIFICATION:
+                        FinalClassificationData finalClassificationData = (FinalClassificationData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(FinalClassificationData));
+                        OnFinalClassificationDataReceive?.Invoke(finalClassificationData);
                         break;
                     case PacketID.LOBBY_INFO:
                         break;
