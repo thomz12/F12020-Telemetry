@@ -143,6 +143,9 @@ namespace F12020Telemetry
         public ResultStatus resultStatus;
     }
 
+    /// <summary>
+    /// The lap data packet gives details of all the cars in the session.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct PacketLapData
     {
