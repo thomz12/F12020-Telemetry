@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace F12020Telemetry
 {
@@ -96,7 +95,7 @@ namespace F12020Telemetry
     /// such as speed, throttle application, DRS etc.
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public struct PacketCarTelemetry
+    public struct PacketCarTelemetryData
     {
         /// <summary>
         /// Header

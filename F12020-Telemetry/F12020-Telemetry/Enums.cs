@@ -3,6 +3,33 @@
 namespace F12020Telemetry
 {
     /// <summary>
+    /// All wheels are in the following order: 
+    /// RL, RR, FL, FR
+    /// </summary>
+    public enum WheelInArray
+    {
+        /// <summary>
+        /// Rear left wheel
+        /// </summary>
+        RL = 0,
+
+        /// <summary>
+        /// Rear right wheel
+        /// </summary>
+        RR = 1,
+
+        /// <summary>
+        /// Front left wheel
+        /// </summary>
+        FL = 2,
+
+        /// <summary>
+        /// Front right wheel
+        /// </summary>
+        FR = 3,
+    }
+
+    /// <summary>
     /// Enum containing the Packet IDs
     /// </summary>
     public enum PacketID : byte
@@ -59,32 +86,75 @@ namespace F12020Telemetry
     }
 
     /// <summary>
-    /// All wheels are in the following order: 
-    /// RL, RR, FL, FR
+    /// Enum for zone flags
     /// </summary>
-    public enum WheelInArray
+    public enum ZoneFlag : sbyte
     {
-        /// <summary>
-        /// Rear left wheel
-        /// </summary>
-        RL = 0,
-
-        /// <summary>
-        /// Rear right wheel
-        /// </summary>
-        RR = 1,
-
-        /// <summary>
-        /// Front left wheel
-        /// </summary>
-        FL = 2,
-
-        /// <summary>
-        /// Front right wheel
-        /// </summary>
-        FR = 3,
+        INVALID = -1,
+        NONE = 0,
+        GREEN = 1,
+        BLUE = 2,
+        YELLOW = 3,
+        RED = 4
     }
 
+    /// <summary>
+    /// Enum for the session type
+    /// </summary>
+    public enum SessionType : byte
+    {
+        UNKNOWN = 0,
+        PRACTICE_1 = 1,
+        PRACTICE_2 = 2,
+        PRACTICE_3 = 3,
+        SHORT_PRACTICE = 4,
+        QUALIFYING_1 = 5,
+        QUALIFYING_2 = 6,
+        QUALIFYING_3 = 7,
+        SHORT_QUALIFYING = 8,
+        ONE_SHOT_QUALIFYING = 9,
+        RACE = 10,
+        RACE_2 = 11,
+        TIME_TRAIL = 12
+    }
+
+    /// <summary>
+    /// Enum for weather types
+    /// </summary>
+    public enum Weather : byte
+    {
+        CLEAR = 0,
+        LIGHT_CLOUD = 1,
+        OVERCAST = 2,
+        LIGHT_RAIN = 3,
+        HEAVY_RAIN = 4,
+        STORM = 5
+    }
+
+    /// <summary>
+    /// Enum for Formula types
+    /// </summary>
+    public enum Formula : byte
+    {
+        F1_MODERN = 0,
+        F1_CLASSIC = 1,
+        F2 = 2,
+        F1_GENERIC = 3
+    }
+
+    /// <summary>
+    /// Enum for safety car statuses
+    /// </summary>
+    public enum SafetyCarStatus : byte
+    {
+        NO_SAFETY_CAR = 0,
+        FULL_SAFETY_CAR = 1,
+        VIRTUAL_SAFETY_CAR = 2
+    }
+
+    /// <summary>
+    /// Enum for button flags
+    /// </summary>
     [Flags]
     public enum ButtonFlags : uint
     {
@@ -117,7 +187,7 @@ namespace F12020Telemetry
         /// D-pad right
         /// </summary>
         DPAD_RIGHT = 0x0020,
-        
+
         /// <summary>
         /// D-pad up
         /// </summary>
@@ -165,16 +235,39 @@ namespace F12020Telemetry
     }
 
     /// <summary>
-    /// MFD Panel index for single player race.
+    /// MFD panel index for single player race.
     /// May vary depending on game mode
     /// </summary>
     public enum MFDPanel : byte
     {
+        /// <summary>
+        /// MFD panel closed
+        /// </summary>
         CLOSED = 255,
+
+        /// <summary>
+        /// MFD panel on car setup info
+        /// </summary>
         CAR_SETUP = 0,
+
+        /// <summary>
+        /// MFD panel on pits info
+        /// </summary>
         PITS = 1,
+
+        /// <summary>
+        /// MFD on damage info
+        /// </summary>
         DAMAGE = 2,
+
+        /// <summary>
+        /// MFD on engine info
+        /// </summary>
         Engine = 3,
+
+        /// <summary>
+        /// MFD on temperature info
+        /// </summary>
         Temperatures = 4
     }
 }
