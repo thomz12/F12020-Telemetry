@@ -51,10 +51,7 @@ namespace F12020TelemetryExample
                 }, 0, 4);
             };
 
-            while(true)
-            {
-                ;
-            }
+            Console.ReadLine();
         }
     }
 }
