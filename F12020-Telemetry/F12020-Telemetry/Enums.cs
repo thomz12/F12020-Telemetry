@@ -341,4 +341,26 @@ namespace F12020Telemetry
         /// </summary>
         Temperatures = 4
     }
+
+    /// <summary>
+    /// Enum for fuel mixes
+    /// </summary>
+    public enum FuelMix : byte
+    {
+        LEAN = 0,
+        STANDARD = 1,
+        RICH = 2,
+        MAX = 3
+    }
+
+    /// <summary>
+    /// ERS Deployment modes
+    /// </summary>
+    public enum ERSDeployMode : byte
+    {
+        NONE = 0,
+        MEDIUM = 1,
+        OVERTAKE = 2,
+        HOTLAP = 3
+    }
 }

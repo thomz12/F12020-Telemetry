@@ -20,7 +20,8 @@ namespace F12020Telemetry
         public delegate void EventDataReceiveDelegate(PacketEventData packet);
         public delegate void ParticipantsDataReceiveDelegate(PacketParticipantsData packet);
         public delegate void CarSetupsDataReceiveDelegate(PacketCarSetupData packet);
-        public delegate void CarTelemetryReceiveDelegate(PacketCarTelemetryData packet);
+        public delegate void CarTelemetryDataReceiveDelegate(PacketCarTelemetryData packet);
+        public delegate void CarStatusDataReceiveDelegate(PacketCarStatusData packet);
 
         // Packet events
         public event MotionDataReceiveDelegate OnMotionDataReceive;
@@ -29,7 +30,8 @@ namespace F12020Telemetry
         public event EventDataReceiveDelegate OnEventDataReceive;
         public event ParticipantsDataReceiveDelegate OnParticipantsDataReceive;
         public event CarSetupsDataReceiveDelegate OnCarSetupsDataReceive;
-        public event CarTelemetryReceiveDelegate OnCarTelemetryReceive;
+        public event CarTelemetryDataReceiveDelegate OncarTelemetryDataReceive;
+        public event CarStatusDataReceiveDelegate OnCarStatusDataReceive;
 
         public bool Connected { get; private set; }
 
@@ -85,9 +87,11 @@ namespace F12020Telemetry
                         break;
                     case PacketID.CAR_TELEMETRY:
                         PacketCarTelemetryData telemetryData = (PacketCarTelemetryData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(PacketCarTelemetryData));
-                        OnCarTelemetryReceive?.Invoke(telemetryData);
+                        OncarTelemetryDataReceive?.Invoke(telemetryData);                        
                         break;
                     case PacketID.CAR_STATUS:
+                        PacketCarStatusData carStatusData = (PacketCarStatusData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(PacketCarStatusData));
+                        OnCarStatusDataReceive?.Invoke(carStatusData);
                         break;
                     case PacketID.FINAL_CLASSIFICATION:
                         break;

@@ -20,7 +20,7 @@ namespace F12020TelemetryExample
 
             Console.WriteLine("Listening for F1 2020...");
 
-            client.OnCarTelemetryReceive += (telemetry) =>
+            client.OncarTelemetryDataReceive += (telemetry) =>
             {
                 Console.SetCursorPosition(0, 0);
 
