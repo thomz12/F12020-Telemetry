@@ -153,6 +153,52 @@ namespace F12020Telemetry
     }
 
     /// <summary>
+    /// Enum for car pit status
+    /// </summary>
+    public enum PitStatus : byte
+    {
+        NONE = 0,
+        PITTING = 1,
+        IN_PIT_AREA = 2
+    }
+
+    /// <summary>
+    /// Enum for all sectors
+    /// </summary>
+    public enum Sector : byte
+    {
+        SECTOR_1 = 0,
+        SECTOR_2 = 1,
+        SECTOR_3 = 2,
+    }
+
+    /// <summary>
+    /// Enum for driver statuses
+    /// </summary>
+    public enum DriverStatus : byte
+    {
+        IN_GARAGE = 0,
+        FLYING_LAP = 1,
+        IN_LAP = 2,
+        OUT_LAP = 3,
+        ON_TRACK = 4
+    }
+
+    /// <summary>
+    /// Enum for result statuses
+    /// </summary>
+    public enum ResultStatus : byte
+    {
+        INVALID = 0,
+        INACTIVE = 1,
+        ACTIVE = 2,
+        FINISHED = 3,
+        DISQUALIFIED = 4,
+        NOT_CLASSIFIED = 5,
+        RETIRED = 6
+    }
+
+    /// <summary>
     /// Enum for button flags
     /// </summary>
     [Flags]
