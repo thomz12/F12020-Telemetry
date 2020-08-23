@@ -8,41 +8,41 @@ namespace F12020Telemetry
         /// <summary>
         /// Fraction (0..1) of way through the lap the marshal zone starts
         /// </summary>
-        float zoneStart;
+        public float zoneStart;
 
         /// <summary>
         /// -1 = invalid/unknown, 0 = none, 1 = green, 2 = blue, 3 = yellow, 4 = red
         /// </summary>
-        ZoneFlag zoneFlag;
+        public ZoneFlag zoneFlag;
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    struct WeatherForecastSample
+    public struct WeatherForecastSample
     {
         /// <summary>
         /// The current session type
         /// </summary>
-        SessionType sessionType;
+        public SessionType sessionType;
 
         /// <summary>
         /// Time in minutes the forecast is for
         /// </summary>
-        byte timeOffset;
+        public byte timeOffset;
 
         /// <summary>
         /// The weather for this sample
         /// </summary>
-        Weather weather;
+        public Weather weather;
 
         /// <summary>
         /// Track temp. in degrees celsius
         /// </summary>
-        sbyte trackTemperature;
+        public sbyte trackTemperature;
 
         /// <summary>
         /// Air temp. in degrees celsius
         /// </summary>
-        sbyte airTemperature;
+        public sbyte airTemperature;
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -158,6 +158,6 @@ namespace F12020Telemetry
         /// Array of weather forecast samples
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
-        WeatherForecastSample[] weatherForecastSamples;
+        public WeatherForecastSample[] weatherForecastSamples;
     }
 }

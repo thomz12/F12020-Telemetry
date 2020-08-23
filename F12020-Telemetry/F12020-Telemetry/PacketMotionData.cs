@@ -11,92 +11,92 @@ namespace F12020Telemetry
         /// <summary>
         /// World space X position
         /// </summary>
-        float worldPositionX;
+        public float worldPositionX;
 
         /// <summary>
         /// World space Y position
         /// </summary>
-        float worldPositionY;
+        public float worldPositionY;
 
         /// <summary>
         /// World space Z position
         /// </summary>
-        float worldPositionZ;
+        public float worldPositionZ;
 
         /// <summary>
         /// Velocity in world space X
         /// </summary>
-        float worldVelocityX;
+        public float worldVelocityX;
 
         /// <summary>
         /// Velocity in world space Y
         /// </summary>
-        float worldVelocityY;
+        public float worldVelocityY;
 
         /// <summary>
         /// Velocity in world space Z
         /// </summary>
-        float worldVelocityZ;
+        public float worldVelocityZ;
 
         /// <summary>
         /// World space forward X direction (normalised)
         /// </summary>
-        short worldForwardDirX;
+        public short worldForwardDirX;
 
         /// <summary>
         /// World space forward Y direction (normalised)
         /// </summary>
-        short worldForwardDirY;
+        public short worldForwardDirY;
 
         /// <summary>
         /// World space forward Z direction (normalised)
         /// </summary>
-        short worldForwardDirZ;
+        public short worldForwardDirZ;
 
         /// <summary>
         /// World space right X direction (normalised)
         /// </summary>
-        short worldRightDirX;
+        public short worldRightDirX;
 
         /// <summary>
         /// World space right Y direction (normalised)
         /// </summary>
-        short worldRightDirY;
+        public short worldRightDirY;
 
         /// <summary>
         /// World space right Z direction (normalised)
         /// </summary>
-        short worldRightDirZ;
+        public short worldRightDirZ;
 
         /// <summary>
         /// Lateral G-Force component
         /// </summary>
-        float gForceLateral;
+        public float gForceLateral;
 
         /// <summary>
         /// Longitudinal G-Force component
         /// </summary>
-        float gForceLongitudinal;
+        public float gForceLongitudinal;
 
         /// <summary>
         /// Vertical G-Force component
         /// </summary>
-        float gForceVertical;
+        public float gForceVertical;
 
         /// <summary>
         /// Yaw angle in radians
         /// </summary>
-        float yaw;
+        public float yaw;
 
         /// <summary>
         /// Pitch angle in radians
         /// </summary>
-        float pitch;
+        public float pitch;
 
         /// <summary>
         /// Roll angle in radians
         /// </summary>
-        float roll;
+        public float roll;
     }
 
     /// <summary>
@@ -109,13 +109,13 @@ namespace F12020Telemetry
         /// <summary>
         /// Header
         /// </summary>
-        PacketHeader header;
+        public PacketHeader header;
 
         /// <summary>
         /// Data for all cars on track
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 22)]
-        CarMotionData[] carMotionData;
+        public CarMotionData[] carMotionData;
 
         // Extra player car ONLY data
 
@@ -123,80 +123,80 @@ namespace F12020Telemetry
         /// Suspension position of each wheel
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        float[] m_suspensionPosition;
+        public float[] m_suspensionPosition;
 
         /// <summary>
         /// Suspension velocity of each wheel
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        float[] m_suspensionVelocity;
+        public float[] m_suspensionVelocity;
 
         /// <summary>
         /// Suspension acceleration of each wheel
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        float[] m_suspensionAcceleration;
+        public float[] m_suspensionAcceleration;
 
         /// <summary>
         /// Speed of each wheel
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        float[] m_wheelSpeed;
+        public float[] m_wheelSpeed;
 
         /// <summary>
         /// Slip ratio for each wheel
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        float[] m_wheelSlip;
+        public float[] m_wheelSlip;
 
         /// <summary>
         /// Velocity in local space
         /// </summary>
-        float m_localVelocityX;
+        public float m_localVelocityX;
 
         /// <summary>
         /// Velocity in local space
         /// </summary>
-        float m_localVelocityY;
+        public float m_localVelocityY;
 
         /// <summary>
         /// Velocity in local space
         /// </summary>
-        float m_localVelocityZ;
+        public float m_localVelocityZ;
 
         /// <summary>
         /// Angular velocity x-component
         /// </summary>
-        float m_angularVelocityX;
+        public float m_angularVelocityX;
 
         /// <summary>
         /// Angular velocity y-component
         /// </summary>
-        float m_angularVelocityY;
+        public float m_angularVelocityY;
 
         /// <summary>
         /// Angular velocity z-component
         /// </summary>
-        float m_angularVelocityZ;
+        public float m_angularVelocityZ;
 
         /// <summary>
         /// Angular acceleration x-component
         /// </summary>
-        float m_angularAccelerationX;
+        public float m_angularAccelerationX;
 
         /// <summary>
         /// Angular acceleration y-component
         /// </summary>
-        float m_angularAccelerationY;
+        public float m_angularAccelerationY;
 
         /// <summary>
         /// Angular acceleration z-component
         /// </summary>
-        float m_angularAccelerationZ;
+        public float m_angularAccelerationZ;
 
         /// <summary>
         /// Current front wheels angle in radians
         /// </summary>
-        float m_frontWheelsAngle;
+        public float m_frontWheelsAngle;
     }
 }

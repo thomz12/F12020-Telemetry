@@ -8,81 +8,81 @@ namespace F12020Telemetry
         /// <summary>
         /// 0 (off) - 2 (high)
         /// </summary>
-        byte tractionControl;
+        public byte tractionControl;
 
         /// <summary>
         /// 0 (off) - 1 (on)
         /// </summary>
-        byte antiLockBrakes;
+        public byte antiLockBrakes;
 
         /// <summary>
         /// Fuel mix - 0 = lean, 1 = standard, 2 = rich, 3 = max
         /// </summary>
-        byte fuelMix;
+        public byte fuelMix;
 
         /// <summary>
         /// Front brake bias (percentage)
         /// </summary>
-        byte frontBrakeBias;
+        public byte frontBrakeBias;
 
         /// <summary>
         /// Pit limiter status - 0 = off, 1 = on
         /// </summary>
-        byte pitLimiterStatus;
+        public byte pitLimiterStatus;
 
         /// <summary>
         /// Current fuel mass
         /// </summary>
-        float fuelInTank;
+        public float fuelInTank;
 
         /// <summary>
         /// Fuel capacity
         /// </summary>
-        float fuelCapacity;
+        public float fuelCapacity;
 
         /// <summary>
         /// Fuel remaining in terms of laps (value on MFD)
         /// </summary>
-        float fuelRemainingLaps;
+        public float fuelRemainingLaps;
 
         /// <summary>
         /// Cars max RPM, point of rev limiter
         /// </summary>
-        ushort maxRPM;
+        public ushort maxRPM;
 
         /// <summary>
         /// Cars idle RPM
         /// </summary>
-        ushort idleRPM;
+        public ushort idleRPM;
 
         /// <summary>
         /// Maximum number of gears
         /// </summary>
-        byte maxGears;
+        public byte maxGears;
 
         /// <summary>
         /// 0 = not allowed, 1 = allowed, -1 = unknown
         /// </summary>
-        byte drsAllowed;
+        public byte drsAllowed;
 
 
         /// <summary>
         /// 0 = DRS not available, non-zero - DRS will be available in [X] metres
         /// </summary>
-        ushort drsActivationDistance;
+        public ushort drsActivationDistance;
 
         /// <summary>
         /// Tyre wear percentage
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        byte[] tyresWear;
+        public byte[] tyresWear;
 
         /// <summary>
         /// F1 Modern - 16 = C5, 17 = C4, 18 = C3, 19 = C2, 20 = C1 7 = inter, 8 = wet<br/>
         /// F1 Classic - 9 = dry, 10 = wet<br/>
         /// F2 – 11 = super soft, 12 = soft, 13 = medium, 14 = hard, 15 = wet<br/>
         /// </summary>
-        byte actualTyreCompound;
+        public byte actualTyreCompound;
 
         /// <summary>
         /// F1 visual (can be different from actual compound)<br/>
@@ -90,78 +90,78 @@ namespace F12020Telemetry
         /// F1 Classic – same as above<br/>
         /// F2 – same as above<br/>
         /// </summary>
-        byte visualTyreCompound;
+        public byte visualTyreCompound;
 
         /// <summary>
         /// Age in laps of the current set of tyres
         /// </summary>
-        byte tyresAgeLaps;
+        public byte tyresAgeLaps;
 
         /// <summary>
         /// Tyre damage (percentage)
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        byte[] tyresDamage;
+        public byte[] tyresDamage;
 
         /// <summary>
         /// Front left wing damage (percentage)
         /// </summary>
-        byte frontLeftWingDamage;
+        public byte frontLeftWingDamage;
 
         /// <summary>
         /// Front right wing damage (percentage)
         /// </summary>
-        byte frontRightWingDamage;
+        public byte frontRightWingDamage;
 
         /// <summary>
         /// Rear wing damage (percentage)
         /// </summary>
-        byte rearWingDamage;
+        public byte rearWingDamage;
 
         /// <summary>
         /// Indicator for DRS fault, 0 = OK, 1 = fault
         /// </summary>
-        byte drsFault;
+        public byte drsFault;
 
         /// <summary>
         /// Engine damage (percentage)
         /// </summary>
-        byte engineDamage;
+        public byte engineDamage;
 
         /// <summary>
         /// Gear box damage (percentage)
         /// </summary>
-        byte gearBoxDamage;
+        public byte gearBoxDamage;
 
         /// <summary>
         /// Vehicle flag
         /// </summary>
-        ZoneFlag vehicleFiaFlags;
+        public ZoneFlag vehicleFiaFlags;
 
         /// <summary>
         /// ERS energy store in Joules
         /// </summary>
-        float ersStoreEnergy;
+        public float ersStoreEnergy;
 
         /// <summary>
         /// Current ERS deploy mode
         /// </summary>
-        ERSDeployMode ersDeployMode;
+        public ERSDeployMode ersDeployMode;
 
         /// <summary>
         /// ERS energy harvested this lap by MGU-K
         /// </summary>
-        float ersHarvestedThisLapMGUK;
+        public float ersHarvestedThisLapMGUK;
 
         /// <summary>
         /// ERS energy harvested this lap by MGU-H
         /// </summary>
-        float ersHarvestedThisLapMGUH;
+        public float ersHarvestedThisLapMGUH;
 
         /// <summary>
         /// ERS energy deployed this lap
         /// </summary>
-        float ersDeployedThisLap;
+        public float ersDeployedThisLap;
     }
 
     /// <summary>

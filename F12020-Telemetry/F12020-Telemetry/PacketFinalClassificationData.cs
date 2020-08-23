@@ -8,69 +8,69 @@ namespace F12020Telemetry
         /// <summary>
         /// Finishing position
         /// </summary>
-        byte position;
+        public byte position;
 
         /// <summary>
         /// Number of laps completed
         /// </summary>
-        byte numLaps;
+        public byte numLaps;
 
         /// <summary>
         /// Grid position of the car
         /// </summary>
-        byte gridPosition;
+        public byte gridPosition;
 
         /// <summary>
         ///  Number of points scored
         /// </summary>
-        byte points;
+        public byte points;
 
         /// <summary>
         /// Number of pit stops made
         /// </summary>
-        byte numPitStops;
+        public byte numPitStops;
 
         /// <summary>
         /// Result status
         /// </summary>
-        ResultStatus resultStatus;
+        public ResultStatus resultStatus;
 
         /// <summary>
         /// Best lap time of the session in seconds
         /// </summary>
-        float bestLapTime;
+        public float bestLapTime;
 
         /// <summary>
         /// Total race time in seconds without penalties
         /// </summary>
-        double totalRaceTime;
+        public double totalRaceTime;
 
         /// <summary>
         /// Total penalties accumulated in seconds
         /// </summary>
-        byte penaltiesTime;
+        public byte penaltiesTime;
 
         /// <summary>
         /// Number of penalties applied to this driver
         /// </summary>
-        byte numPenalties;
+        public byte numPenalties;
 
         /// <summary>
         /// Number of tyres stints up to maximum
         /// </summary>
-        byte numTyreStints;
+        public byte numTyreStints;
 
         /// <summary>
         /// Actual tyres used by this driver
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-        byte[] tyreStintsActual;
+        public byte[] tyreStintsActual;
 
         /// <summary>
         /// Visual tyres used by this driver
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-        byte[] tyreStintsVisual;
+        public byte[] tyreStintsVisual;
     }
 
     /// <summary>
@@ -88,12 +88,12 @@ namespace F12020Telemetry
         /// <summary>
         /// Number of cars in the final classification
         /// </summary>
-        byte numCars;
+        public byte numCars;
 
         /// <summary>
         /// Classification data
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 22)]
-        FinalClassificationData classificationData;
+        public FinalClassificationData classificationData;
     }
 }

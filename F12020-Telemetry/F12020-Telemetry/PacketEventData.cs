@@ -133,11 +133,11 @@ namespace F12020Telemetry
         /// Event string code
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        char[] eventStringCode;
+        public char[] eventStringCode;
 
         /// <summary>
         /// Event details, use <see cref="eventStringCode"/> to determine which event to pick.
         /// </summary>
-        EventDataDetails eventDataDetails;
+        public EventDataDetails eventDataDetails;
     }
 }

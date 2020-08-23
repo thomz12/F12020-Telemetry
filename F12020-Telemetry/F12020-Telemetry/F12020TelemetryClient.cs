@@ -22,7 +22,8 @@ namespace F12020Telemetry
         public delegate void CarSetupsDataReceiveDelegate(PacketCarSetupData packet);
         public delegate void CarTelemetryDataReceiveDelegate(PacketCarTelemetryData packet);
         public delegate void CarStatusDataReceiveDelegate(PacketCarStatusData packet);
-        public delegate void FinalClassificationDataReceiveDelegate(FinalClassificationData packet);
+        public delegate void FinalClassificationDataReceiveDelegate(PacketFinalClassificationData packet);
+        public delegate void LobbyInfoDataReceiveDelegate(PacketLobbyInfoData packet);
 
         // Packet events
         public event MotionDataReceiveDelegate OnMotionDataReceive;
@@ -34,8 +35,7 @@ namespace F12020Telemetry
         public event CarTelemetryDataReceiveDelegate OncarTelemetryDataReceive;
         public event CarStatusDataReceiveDelegate OnCarStatusDataReceive;
         public event FinalClassificationDataReceiveDelegate OnFinalClassificationDataReceive;
-
-        public bool Connected { get; private set; }
+        public event LobbyInfoDataReceiveDelegate OnLobbyInfoDataReceive;
 
         /// <summary>
         /// Constructs telemetry client and sets it up for receiving data.
@@ -89,19 +89,25 @@ namespace F12020Telemetry
                         break;
                     case PacketID.CAR_TELEMETRY:
                         PacketCarTelemetryData telemetryData = (PacketCarTelemetryData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(PacketCarTelemetryData));
-                        OncarTelemetryDataReceive?.Invoke(telemetryData);                        
+                        OncarTelemetryDataReceive?.Invoke(telemetryData);
                         break;
                     case PacketID.CAR_STATUS:
                         PacketCarStatusData carStatusData = (PacketCarStatusData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(PacketCarStatusData));
                         OnCarStatusDataReceive?.Invoke(carStatusData);
                         break;
                     case PacketID.FINAL_CLASSIFICATION:
-                        FinalClassificationData finalClassificationData = (FinalClassificationData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(FinalClassificationData));
+                        PacketFinalClassificationData finalClassificationData = (PacketFinalClassificationData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(PacketFinalClassificationData));
                         OnFinalClassificationDataReceive?.Invoke(finalClassificationData);
                         break;
                     case PacketID.LOBBY_INFO:
+                        PacketLobbyInfoData lobbyInfoData = (PacketLobbyInfoData)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(PacketLobbyInfoData));
+                        OnLobbyInfoDataReceive?.Invoke(lobbyInfoData);
                         break;
                 }
+            }
+            catch
+            {
+                Console.WriteLine("Failed to receive F1 2020 packet.");
             }
             finally
             {
