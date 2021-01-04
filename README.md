@@ -3,15 +3,14 @@
 Receives and parses all telemetry packets from the F1 2020 game.
 More info on the packets can be find in the UDP specification: https://forums.codemasters.com/topic/50942-f1-2020-udp-specification/ 
 
+# Nuget
+Package is available on [Nuget](https://www.nuget.org/packages/F12020-Telemetry/). 
+
 # Note
 UDP telemetry must be turned on in the game for this to work. By default this is turned off. Find the telemetry settings in:
 
 `Game Options > Settings > Telemetry Settings`
-
-In here, turn on `UDP Telemetry` to `On`. By default the port is `20777`.
-
-# Nuget
-Package is available on [Nuget](https://www.nuget.org/packages/F12020-Telemetry/). 
+In here, turn set `UDP Telemetry` to `On`. By default the port is `20777`.
 
 # Usage
 To receive events, you have to create a `F12020TelemetryClient`. Here's an example:
