@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/thomz12/F12020-Telemetry</RepositoryUrl>
     <PackageTags>F1, formula, formula1, game, telemetry, udp</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
