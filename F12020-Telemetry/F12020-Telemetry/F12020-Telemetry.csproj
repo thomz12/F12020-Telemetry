@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>F12020Telemetry</RootNamespace>
+    <Authors>Thom Zeilstra</Authors>
+    <Description>Library to listen and parse F1 2020 UDP telemetry events.</Description>
+    <Copyright></Copyright>
+    <PackageProjectUrl>https://github.com/thomz12/F12020-Telemetry</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/thomz12/F12020-Telemetry</RepositoryUrl>
+    <PackageTags>F1, formula, formula1, game, telemetry, udp</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
