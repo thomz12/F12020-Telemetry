@@ -25,7 +25,7 @@ jobs:
       uses: brandedoutcast/publish-nuget@v2
       with:
         PROJECT_FILE_PATH: F12020-Telemetry/F12020-Telemetry/F12020-Telemetry.csproj
-        VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
+        VERSION_REGEX: '^\s*<Version>(.*)<\/Version>\s*$'
         TAG_FORMAT: '*'
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
