@@ -89,7 +89,7 @@ namespace F12020Telemetry
             if (Connected == false)
             {
                 Connected = true;
-                OnConnectStatusChanged.Invoke(true);
+                OnConnectStatusChanged?.Invoke(true);
             }
 
             // Restart the timeout timer.
@@ -173,7 +173,7 @@ namespace F12020Telemetry
         private void TimeoutEvent(object sender, ElapsedEventArgs e)
         {
             Connected = false;
-            OnConnectStatusChanged.Invoke(false);
+            OnConnectStatusChanged?.Invoke(false);
         }
     }
 }
