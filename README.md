@@ -31,4 +31,5 @@ There is also a way to tell when we start and stop receiving updates:
 
 # Example
 There is a simple console application example showing the car telemetry data of the player. (See [`F12020-Telemetry\ConsoleExample`](https://github.com/thomz12/F12020-Telemetry/tree/master/F12020-Telemetry/ConsoleExample))
+
 ![Alt text](telemetry-example.gif?raw=true "Console example")
